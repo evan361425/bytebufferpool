@@ -1,3 +1,3 @@
-module github.com/gallir/bytebufferpool
+module github.com/evan361425/bytebufferpool
 
-go 1.12
+go 1.23

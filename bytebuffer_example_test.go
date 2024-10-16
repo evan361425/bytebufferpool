@@ -3,14 +3,14 @@ package bytebufferpool_test
 import (
 	"fmt"
 
-	"github.com/gallir/bytebufferpool"
+	"github.com/evan361425/bytebufferpool"
 )
 
 func ExampleByteBuffer() {
 	bb := bytebufferpool.Get()
 
-	bb.WriteString("first line\n")
-	bb.Write([]byte("second line\n"))
+	_, _ = bb.WriteString("first line\n")
+	_, _ = bb.Write([]byte("second line\n"))
 	bb.B = append(bb.B, "third line\n"...)
 
 	fmt.Printf("bytebuffer contents=%q", bb.B)

@@ -11,7 +11,7 @@ func BenchmarkByteBufferWrite(b *testing.B) {
 		var buf ByteBuffer
 		for pb.Next() {
 			for i := 0; i < 100; i++ {
-				buf.Write(s)
+				_, _ = buf.Write(s)
 			}
 			buf.Reset()
 		}
