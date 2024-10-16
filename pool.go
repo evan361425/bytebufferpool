@@ -23,6 +23,9 @@ const (
 // Properly determined byte buffer types with their own pools may help reducing
 // memory waste.
 type Pool struct {
+	// must be first member to reduce memory
+	pool sync.Pool
+
 	calls       [steps]uint64
 	calibrating uint64
 
@@ -31,8 +34,6 @@ type Pool struct {
 
 	minBitSize uint64
 	minSize    uint64
-
-	pool sync.Pool
 }
 
 var defaultPool Pool
